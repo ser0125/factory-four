@@ -2,26 +2,64 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+const endpoints = [
+  "accounts",
+  "assets",
+  "customers",
+  "datapoints",
+  "devices",
+  "documents",
+  "forms",
+  "invites",
+  "media",
+  "messages",
+  "namespaces",
+  "orders",
+  "patients",
+  "relationships",
+  "rules",
+  "templates",
+  "users",
+  "workflows",
+];
+
 export default function Dashboard() {
   const [apis, setApis] = useState({});
 
-  const fetchApi = async () => {
-    const url = "https://api.factoryfour.com/accounts/health/status";
+  const fetchApi = async (endpoint: string) => {
+    const url = `https://api.factoryfour.com/${endpoint}/health/status`;
     try {
       const { data } = await axios.get(url);
-      setApis(data);
+      setApis((previousState) => ({
+        ...previousState,
+        [endpoint]: data,
+      }));
     } catch (e) {
       console.log(e);
-      setApis({ success: false, message: e });
+      setApis((previousState) => ({
+        ...previousState,
+        [endpoint]: { success: false, message: e },
+      }));
     }
   };
 
+  const getAllStatus = async () => {
+    endpoints.forEach(async (endpoint) => await fetchApi(endpoint));
+  };
+
   useEffect(() => {
+    getAllStatus();
     const interval = setInterval(() => {
-      fetchApi();
+      getAllStatus();
     }, 3000);
     return () => clearInterval(interval);
   }, []);
 
-  return <div>Dashboard</div>;
+  return (
+    <>
+      {endpoints.map((name, index) => {
+        return <h1 key={name + index}>{name}</h1>;
+      })}
+    </>
+  );
 }
