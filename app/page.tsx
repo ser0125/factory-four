@@ -38,7 +38,7 @@ export default function Dashboard() {
       console.log(e);
       setApis((previousState) => ({
         ...previousState,
-        [endpoint]: { success: false, message: e },
+        [endpoint]: { success: false, message: 'Error' },
       }));
     }
   };
@@ -58,7 +58,12 @@ export default function Dashboard() {
   return (
     <>
       {endpoints.map((name, index) => {
-        return <h1 key={name + index}>{name}</h1>;
+        return (
+          <>
+            <h1 key={name + index}>{name}</h1>
+            {apis && <h1>{apis[name]?.message}</h1>}
+          </>
+        );
       })}
     </>
   );
