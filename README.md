@@ -17,7 +17,6 @@ Next JS application, responsible for validating a password following a Regex app
 - [Usage](#usage)
 - [Demo](#demo)
 - [Contributing](#contributing)
-- [Tests](#tests)
 - [License](#license)
 - [Contact Information](#contact-information)
 
