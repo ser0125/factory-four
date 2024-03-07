@@ -3,6 +3,7 @@ export interface Api {
   success: boolean;
   hostname?: string;
   time?: number;
+  error?: any;
 }
 
 export interface Apis {
