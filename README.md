@@ -6,10 +6,9 @@
 [![forthebadge](https://forthebadge.com/images/badges/made-with-next-13.svg)](http://forthebadge.com)
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
 [![Vercel](https://vercelbadge.vercel.app/api/ser0125/qventus-take-home-app?style=for-the-badge)](https://qventus-take-home-hq5a273ej-ser0125.vercel.app/)
-![storybook-badge-optimized](https://github.com/ser0125/qventus-take-home-app/assets/11180036/25a7303d-7795-46d8-ad3a-8157b81fb5f6)
 
 
-Next JS application, responsible for validating a password following a Regex approach
+Next JS application, responsible for monitor the Factory Four Apis
 
 ## Table of Contents
 
