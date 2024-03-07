@@ -1,7 +1,4 @@
 "use client";
-import { useCallback, useEffect, useState } from "react";
-import axios from "axios";
-import { Apis } from "@/interfaces/Apis";
 import Card from "@/components/Card";
 import useFetchApi from "@/hooks/useFetchApi";
 
